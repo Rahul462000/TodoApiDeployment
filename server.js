@@ -3,9 +3,11 @@ import { connectDB } from "./data/database.js";
 
 connectDB();
 
-const PORT = process.env.PORT || 4000;
+// const PORT = process.env.PORT || 4000;
 // console.log(process.env.PORT);
 
 app.listen(process.env.PORT, () => {
-  console.log(`server listening on :${PORT} in ${process.env.NODE_ENV} MODE`);
+  console.log(
+    `server listening on :${process.env.PORT} in ${process.env.NODE_ENV} MODE`
+  );
 });
