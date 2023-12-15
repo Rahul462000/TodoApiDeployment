@@ -17,11 +17,7 @@ config({
 
 app.use(express.json()); /////3.
 app.use(cookieParser()); /////4.
-// using routes
-app.use("/api/v1/users", userRouter); /////5.
-app.use("/api/v1/task", taskRouter); /////6.
-// it is used for hosting purposes
-// here specifying the alowed domain
+
 app.use(
   ////8.
   cors({
@@ -30,6 +26,11 @@ app.use(
     credentials: true,
   })
 );
+// using routes
+app.use("/api/v1/users", userRouter); /////5.
+app.use("/api/v1/task", taskRouter); /////6.
+// it is used for hosting purposes
+// here specifying the alowed domain
 app.get("/", (req, res) => {
   res.send("<h1>Hello everyone</h1>");
 });
